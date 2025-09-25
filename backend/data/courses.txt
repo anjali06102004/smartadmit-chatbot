@@ -1,0 +1,56 @@
+Academic Programs and Courses
+
+Engineering Department:
+- Computer Science Engineering (4 years)
+  * Fee: $8,000 per semester
+  * Specializations: AI/ML, Web Development, Cybersecurity
+- Mechanical Engineering (4 years)
+  * Fee: $7,500 per semester
+  * Specializations: Robotics, Automotive, Manufacturing
+- Electrical Engineering (4 years)
+  * Fee: $7,800 per semester
+  * Specializations: Power Systems, Electronics, Communication
+
+Business Department:
+- Bachelor of Business Administration (3 years)
+  * Fee: $6,500 per semester
+  * Specializations: Marketing, Finance, HR, Operations
+- Master of Business Administration (2 years)
+  * Fee: $12,000 per semester
+  * Specializations: Digital Marketing, Finance, Entrepreneurship
+
+Arts and Sciences:
+- Bachelor of Arts in English (3 years)
+  * Fee: $5,500 per semester
+  * Specializations: Literature, Creative Writing, Journalism
+- Bachelor of Science in Mathematics (3 years)
+  * Fee: $6,000 per semester
+  * Specializations: Applied Mathematics, Statistics, Data Science
+
+Computer Applications:
+- Bachelor of Computer Applications (3 years)
+  * Fee: $7,000 per semester
+  * Specializations: Software Development, Database Management
+- Master of Computer Applications (2 years)
+  * Fee: $10,000 per semester
+  * Specializations: AI/ML, Cloud Computing, Cybersecurity
+
+Diploma Programs:
+- Diploma in Digital Marketing (1 year)
+  * Fee: $4,500 per semester
+- Diploma in Web Development (1 year)
+  * Fee: $5,000 per semester
+- Diploma in Data Science (1 year)
+  * Fee: $5,500 per semester
+
+Additional Fees:
+- Laboratory Fee: $500 per semester
+- Library Fee: $200 per semester
+- Sports Fee: $300 per semester
+- Development Fee: $1,000 per semester
+
+Scholarships Available:
+- Merit-based scholarships (up to 50% fee waiver)
+- Sports scholarships
+- Need-based financial aid
+- International student scholarships
