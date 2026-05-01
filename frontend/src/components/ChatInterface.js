@@ -51,6 +51,7 @@ const ChatInterface = () => {
     isTyping,
     voiceEnabled,
     autoSpeak,
+    currentSession,
     addMessage,
     setTyping,
     clearMessages,
@@ -154,17 +155,20 @@ const ChatInterface = () => {
       // Get conversation context for RAG
       const context = getConversationContext();
       
-      // Send to backend
+      // Send to backend with session ID
       const startTime = Date.now();
-      const response = await chatService.sendMessage(text, context);
+      const response = await chatService.sendMessage(text, context, currentSession?.id);
       const responseTime = Date.now() - startTime;
 
-      // Add bot response
+      // Add bot response with enhanced data
       const botMessage = {
         text: response.answer,
         sender: 'bot',
         timestamp: response.timestamp,
         responseTime,
+        sources: response.sources || [],
+        confidence: response.confidence || 0,
+        messageId: response.messageId,
       };
 
       addMessage(botMessage);

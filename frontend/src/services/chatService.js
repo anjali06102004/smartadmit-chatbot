@@ -68,13 +68,14 @@ api.interceptors.response.use(
 // Chat Service
 export const chatService = {
   // Send message to chatbot
-  async sendMessage(question, context = '') {
+  async sendMessage(question, context = '', sessionId = null) {
     try {
       const startTime = Date.now();
       
       const response = await api.post('/api/chat', {
         question: question.trim(),
         context: context,
+        sessionId: sessionId,
         timestamp: new Date().toISOString(),
       });
 
@@ -82,8 +83,12 @@ export const chatService = {
       
       return {
         answer: response.data.answer,
+        sources: response.data.sources || [],
+        confidence: response.data.confidence || 0,
         responseTime,
-        timestamp: new Date().toISOString(),
+        timestamp: response.data.timestamp || new Date().toISOString(),
+        sessionId: response.data.sessionId,
+        messageId: response.data.messageId,
       };
     } catch (error) {
       console.error('Error sending message:', error);
@@ -161,6 +166,50 @@ export const chatService = {
     } catch (error) {
       console.error('Error reporting issue:', error);
       throw error;
+    }
+  },
+
+  // Get conversation history for a session
+  async getConversation(sessionId) {
+    try {
+      const response = await api.get(`/api/chat/conversation/${sessionId}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching conversation:', error);
+      return { sessionId, messages: [] };
+    }
+  },
+
+  // Clear conversation for a session
+  async clearConversation(sessionId) {
+    try {
+      const response = await api.delete(`/api/chat/conversation/${sessionId}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error clearing conversation:', error);
+      throw error;
+    }
+  },
+
+  // Get RAG system statistics
+  async getRAGStats() {
+    try {
+      const response = await api.get('/api/chat/stats');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching RAG stats:', error);
+      return { status: 'error' };
+    }
+  },
+
+  // Get memory service statistics
+  async getMemoryStats() {
+    try {
+      const response = await api.get('/api/chat/memory/stats');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching memory stats:', error);
+      return { totalConversations: 0, totalMessages: 0 };
     }
   },
 };

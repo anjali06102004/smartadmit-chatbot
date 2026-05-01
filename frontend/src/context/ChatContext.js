@@ -287,8 +287,11 @@ export const ChatProvider = ({ children }) => {
   const getConversationContext = (limit = 5) => {
     return state.messages
       .slice(-limit * 2) // Get last N pairs of messages
-      .map(msg => `${msg.sender}: ${msg.text}`)
-      .join('\n');
+      .map(msg => ({
+        sender: msg.sender,
+        text: msg.text,
+        timestamp: msg.timestamp
+      }));
   };
 
   // Get user preferences for personalization
