@@ -15,6 +15,7 @@ build/
 dist/
 frontend/build/
 backend/dist/
+backend/data/
 
 # IDE/Editor files
 .vscode/
